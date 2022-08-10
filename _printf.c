@@ -35,11 +35,11 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int (*f)(va_list);
 	unsigned int i = 0, counter = 0;
-
+/**
 	if (format == NULL)
 		return (-1);
 	va_start(ap, format);
-
+*/
 	while (format && format[i])
 	{
 		if (format[i] != '%')
