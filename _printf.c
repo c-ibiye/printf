@@ -35,11 +35,11 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int (*f)(va_list);
 	unsigned int i = 0, counter = 0;
-/**
+
 	if (format == NULL)
-		return (-1);
+/*		return (-1);*/
 	va_start(ap, format);
-*/
+
 	while (format && format[i])
 	{
 		if (format[i] != '%')
@@ -62,7 +62,7 @@ int _printf(const char *format, ...)
 			{
 				f = check_format(&format[i + 1]);
 				if (f == NULL)
-					return (-1);
+			/*		return (-1);*/
 				i += 2;
 				counter += f(ap);
 				continue;
