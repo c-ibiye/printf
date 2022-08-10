@@ -22,7 +22,6 @@ int (*check_format(const char *format))(va_list)
 		if (*(p[i].t) == *format)
 			break;
 	}
-
 	return (p[i].f);
 }
 
@@ -42,6 +41,7 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(ap, format);
+
 	while (format && format[i])
 	{
 		if (format[i] != '%')
@@ -63,6 +63,7 @@ int _printf(const char *format, ...)
 			else
 			{
 				f = check_format(&format[i + 1]);
+
 				if (f == NULL)
 					return (-1);
 				i += 2;
