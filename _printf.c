@@ -16,11 +16,13 @@ int (*check_format(const char *format))(va_list)
 		{"s", print_s},
 		{NULL, NULL}
 	};
-	for (; p[i].t != NULL; i++)
-	{
-		if (*(p[i].t) == *format)
-			break;
-	}
+/*
+*	for (; p[i].t != NULL; i++)
+*	{
+*		if (*(p[i].t) == *format)
+*			break;
+*	}
+*/
 	return (p[i].f);
 }
 
@@ -37,7 +39,7 @@ int _printf(const char *format, ...)
 	unsigned int i = 0, counter = 0;
 
 	if (format == NULL)
-/*		return (-1);*/
+		return (-1);
 	va_start(ap, format);
 
 	while (format && format[i])
@@ -62,7 +64,7 @@ int _printf(const char *format, ...)
 			{
 				f = check_format(&format[i + 1]);
 				if (f == NULL)
-			/*		return (-1);*/
+					return (-1);
 				i += 2;
 				counter += f(ap);
 				continue;
