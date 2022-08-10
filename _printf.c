@@ -16,13 +16,13 @@ int (*check_format(const char *format))(va_list)
 		{"s", print_s},
 		{NULL, NULL}
 	};
-/*
-*	for (; p[i].t != NULL; i++)
-*	{
-*		if (*(p[i].t) == *format)
-*			break;
-*	}
-*/
+
+	for (; p[i].t != NULL; i++)
+	{
+		if (*(p[i].t) == *format)
+			break;
+	}
+
 	return (p[i].f);
 }
 
