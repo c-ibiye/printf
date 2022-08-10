@@ -22,6 +22,7 @@ int (*check_format(const char *format))(va_list)
 		if (*(p[i].t) == *format)
 			break;
 	}
+
 	return (p[i].f);
 }
 
